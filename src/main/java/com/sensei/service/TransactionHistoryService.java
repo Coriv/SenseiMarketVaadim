@@ -5,7 +5,6 @@ import com.sensei.dto.AuthDto;
 import com.sensei.dto.HistoryDto;
 import com.sensei.dto.WalletDto;
 import com.sensei.views.LoginForm;
-import com.sensei.views.WalletView;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -24,10 +23,7 @@ public class TransactionHistoryService {
     }
 
     public static TransactionHistoryService getInstance() {
-        if(historyService == null) {
-            historyService = new TransactionHistoryService();
-        }
-        return historyService;
+        return historyService != null ? historyService : new TransactionHistoryService();
     }
 
     public List<HistoryDto> getHistory() {

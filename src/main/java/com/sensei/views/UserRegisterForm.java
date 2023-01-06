@@ -10,7 +10,6 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.data.validator.EmailValidator;
-import lombok.extern.java.Log;
 
 public class UserRegisterForm extends FormLayout {
     private TextField firstName = new TextField("First name");

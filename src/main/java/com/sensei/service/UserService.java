@@ -19,10 +19,7 @@ public class UserService {
     }
 
     public static UserService getInstance() {
-        if (userService == null) {
-            userService = new UserService();
-        }
-        return userService;
+        return userService != null ? userService : new UserService();
     }
 
     public List<String> getUsernames() {

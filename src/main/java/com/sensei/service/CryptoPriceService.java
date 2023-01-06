@@ -20,10 +20,7 @@ public class CryptoPriceService {
     }
 
     public static CryptoPriceService getInstance() {
-        if (cryptoPriceService == null) {
-            cryptoPriceService = new CryptoPriceService();
-        }
-        return cryptoPriceService;
+        return cryptoPriceService != null ? cryptoPriceService : new CryptoPriceService();
     }
 
     public Set<CryptoPriceDto> getPrices() {

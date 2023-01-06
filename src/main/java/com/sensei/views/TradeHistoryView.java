@@ -8,13 +8,13 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 
 @Route("history")
-public class HistoryView extends VerticalLayout {
+public class TradeHistoryView extends VerticalLayout {
 
     private TransactionHistoryService historyService = TransactionHistoryService.getInstance();
     private Grid<HistoryDto> grid = new Grid<>(HistoryDto.class);
     private NativeButton walletButton = new NativeButton("Back to wallet");
 
-    public HistoryView() {
+    public TradeHistoryView() {
         grid.setColumns("id", "transactionType", "cryptocurrency", "quantity", "price", "value", "userId", "transactionTime");
         grid.setSizeFull();
         add(grid, walletButton);

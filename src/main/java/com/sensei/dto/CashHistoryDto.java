@@ -2,18 +2,20 @@ package com.sensei.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-@Data
+
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class HistoryDto {
+@Data
+@NoArgsConstructor
+public class CashHistoryDto {
     private Long id;
-    private TransactionType transactionType;
-    private String cryptocurrency;
-    private BigDecimal quantity;
-    private BigDecimal price;
-    private BigDecimal value;
     private Long userId;
-    private LocalDateTime transactionTime;
+    private OperationType type;
+    private BigDecimal quantityUSD;
+    private BigDecimal quantityPLN;
+    private String toAccount;
+    private LocalDateTime time;
 }

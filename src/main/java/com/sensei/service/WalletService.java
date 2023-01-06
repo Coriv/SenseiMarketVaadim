@@ -26,10 +26,7 @@ public class WalletService {
     }
 
     public static WalletService getInstance() {
-        if (walletService == null) {
-            walletService = new WalletService();
-        }
-        return walletService;
+        return walletService != null ? walletService : new WalletService();
     }
 
     public WalletDto getWalletContent(AuthDto authDto) {

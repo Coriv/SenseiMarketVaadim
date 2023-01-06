@@ -18,8 +18,6 @@ public class MainView extends VerticalLayout {
     private Grid<CryptoPriceDto> grid = new Grid<>(CryptoPriceDto.class);
     private LoginForm loginForm = new LoginForm(this);
     private UserRegisterForm registerForm = new UserRegisterForm(this);
-
-  //  private WalletView walletView = new WalletView(this);
     private HorizontalLayout mainContent;
 
     public MainView() {
@@ -50,10 +48,5 @@ public class MainView extends VerticalLayout {
     public void showSingUpForm() {
         registerForm.setVisible(true);
     }
-
-//    public void showWallet() {
-//        remove(filter, mainContent);
-//        add(walletView);
-//    }
 
 }

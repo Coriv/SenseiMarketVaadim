@@ -30,10 +30,7 @@ public class WalletCryptoService {
     }
 
     public static WalletCryptoService getInstance() {
-        if(walletCryptoService == null) {
-            walletCryptoService = new WalletCryptoService();
-        }
-        return walletCryptoService;
+        return walletCryptoService != null ? walletCryptoService : new WalletCryptoService();
     }
 
     public List<WalletCryptoDto> getCryptosList() {

@@ -3,9 +3,11 @@ package com.sensei.service;
 import com.sensei.config.AuthConfig;
 import com.sensei.dto.AuthDto;
 import com.sensei.dto.CashWalletDto;
-import com.sensei.dto.WalletDto;
 import com.sensei.views.LoginForm;
-import org.springframework.http.*;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
@@ -30,10 +32,7 @@ public class CashWalletService {
     }
 
     public static CashWalletService getInstance() {
-        if(cashWalletService == null) {
-            cashWalletService = new CashWalletService();
-        }
-        return cashWalletService;
+        return cashWalletService != null ? cashWalletService : new CashWalletService();
     }
 
     public CashWalletDto getCashWalletDto() {

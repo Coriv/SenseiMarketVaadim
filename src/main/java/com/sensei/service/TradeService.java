@@ -13,7 +13,10 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class TradeService {
@@ -35,10 +38,7 @@ public class TradeService {
     }
 
     public static TradeService getInstance() {
-        if (tradeService == null) {
-            tradeService = new TradeService();
-        }
-        return tradeService;
+        return tradeService != null ? tradeService : new TradeService();
     }
 
     public List<TradeDto> getOtherTrades() {
